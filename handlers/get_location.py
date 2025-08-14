@@ -1,5 +1,5 @@
 from aiogram import types
-from keyboards import main_menu_kb
+from keyboards.main_menu import main_menu_kb
 
 
 async def get_location(message: types.Message):

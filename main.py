@@ -1,17 +1,17 @@
 import asyncio
-from aiogram import Bot, Dispatcher, F
+from create_bot import bot, dp
+from aiogram import F
 from aiogram.filters import Command
-from config import BOT_TOKEN
-from handlers.start import cmd_start
-from handlers.riding_now import riding_now
-from handlers.get_location import get_location
-from handlers.who_is_near import who_is_near
+from handlers import cmd_start, riding_now, get_location, who_is_near
 
 
+# TODO Добавить логирование
+# TODO Реализовать переход между состояниями в меню
+# TODO Реализоать загрузку фото себя и своего транспорта
+# TODO Реализоать хранение пользователей
+# TODO Доработать геолокацию
 async def main():
-    bot = Bot(token=BOT_TOKEN)
-    dp = Dispatcher()
-
+    print("Бот запущен")
     # Регистрируем обработчики
     dp.message.register(cmd_start, Command("start"))
     dp.message.register(riding_now, F.text == "🚴 Я катаюсь")

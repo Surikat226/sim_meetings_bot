@@ -1,5 +1,5 @@
 from aiogram import types
-from keyboards import user_location_kb
+from keyboards.user_location import user_location_kb
 
 
 async def riding_now(message: types.Message):
