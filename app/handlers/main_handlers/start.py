@@ -1,12 +1,17 @@
-from aiogram import types
+from aiogram import types, Router
 from aiogram.fsm.context import FSMContext
-from keyboards.main_menu import main_menu_kb
-from states.main_states import MainStates
+from aiogram.filters import CommandStart
+from app.keyboards.main_menu import main_menu_kb
+from app.states.main_states import MainStates
 
 
+start_router = Router()
+
+
+@start_router.message(CommandStart())
 async def cmd_start(message: types.Message, state: FSMContext):
     """
-    /start — приветственное сообщение
+    /start — Приветствует пользователя и показывает стартовое (главное) меню
     """
     await message.answer(
         f"Привет, {message.from_user.first_name}! 🚀\n"

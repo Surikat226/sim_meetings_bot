@@ -1,9 +1,13 @@
-from aiogram import types
+from aiogram import types, Router, F
 from aiogram.fsm.context import FSMContext
-from keyboards.main_menu import main_menu_kb
-from states.main_states import MainStates
+from app.keyboards.main_menu import main_menu_kb
+from app.states.main_states import MainStates
 
 
+get_location_router = Router()
+
+
+@get_location_router.message(F.location)
 async def get_location(message: types.Message, state: FSMContext):
     """
     Принимает геопозицию от пользователя
