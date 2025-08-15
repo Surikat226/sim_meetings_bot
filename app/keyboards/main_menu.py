@@ -1,5 +1,5 @@
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
-from ..utils.static_data import FilterTexts
+from app.utils.static_data import FilterTexts
 
 
 main_menu_kb = ReplyKeyboardMarkup(

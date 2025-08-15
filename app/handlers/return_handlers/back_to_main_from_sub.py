@@ -3,12 +3,14 @@ from aiogram.fsm.context import FSMContext
 from app.keyboards.main_menu import main_menu_kb
 from app.states.main_states import MainStates
 from ...utils.static_data import FilterTexts
+from ...utils.logging import log_handler
 
 
 back_to_main_from_sub_router = Router()
 
 
 @back_to_main_from_sub_router.message(F.text == FilterTexts.back)
+@log_handler
 async def back_to_main_from_sub(message: types.Message, state: FSMContext):
     """
     Хендлер для возврата в главное меню из сабменю

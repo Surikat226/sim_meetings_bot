@@ -2,12 +2,14 @@ from aiogram import types, Router, F
 from aiogram.fsm.context import FSMContext
 from app.keyboards.main_menu import main_menu_kb
 from app.states.main_states import MainStates
+from app.utils.logging import log_handler
 
 
 get_location_router = Router()
 
 
 @get_location_router.message(F.location)
+@log_handler
 async def get_location(message: types.Message, state: FSMContext):
     """
     Принимает геопозицию от пользователя

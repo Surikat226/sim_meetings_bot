@@ -5,10 +5,7 @@ from app.handlers.return_handlers.back_to_main_from_sub import back_to_main_from
 from loguru import logger
 
 
-# TODO Перенести все текста кнопок в енамы
 # TODO Подключить пакетный менеджер (poetry/uv), если целесообразно
-# TODO Добавить логирование
-# TODO Реализовать переход между состояниями в меню
 # TODO Реализоать загрузку фото себя и своего транспорта
 # TODO Реализоать хранение пользователей
 # TODO Доработать геолокацию
