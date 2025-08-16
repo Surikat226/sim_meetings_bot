@@ -5,14 +5,14 @@ from app.states.main_states import MainStates
 from app.utils.logging import log_handler
 
 
-get_location_router = Router()
+get_one_time_location_router = Router()
 
 
 @log_handler
-@get_location_router.message(F.location)
-async def get_location(message: types.Message, state: FSMContext):
+@get_one_time_location_router.message(F.location)
+async def get_one_time_location(message: types.Message, state: FSMContext):
     """
-    Принимает геопозицию от пользователя
+    Принимает единовременную геопозицию от пользователя
     """
     lat = message.location.latitude
     lon = message.location.longitude
@@ -21,4 +21,4 @@ async def get_location(message: types.Message, state: FSMContext):
         f"Широта: {lat}\nДолгота: {lon}",
         reply_markup=main_menu_kb
     )
-    await state.set_state(MainStates.get_location_menu)
+    await state.set_state(MainStates.get_one_time_location_menu)

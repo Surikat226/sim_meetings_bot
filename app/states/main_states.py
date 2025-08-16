@@ -8,4 +8,5 @@ class MainStates(StatesGroup):
     main_menu = State()
     riding_menu = State()
     who_is_near_menu = State()
-    get_location_menu = State()
+    get_one_time_location_menu = State()
+    get_live_location_menu = State()
