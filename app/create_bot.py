@@ -1,4 +1,4 @@
-from config import BOT_TOKEN
+from app.config import BOT_TOKEN
 from aiogram import Bot, Dispatcher
 from aiogram.fsm.storage.memory import MemoryStorage
 

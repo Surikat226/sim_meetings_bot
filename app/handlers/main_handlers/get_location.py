@@ -8,8 +8,8 @@ from app.utils.logging import log_handler
 get_location_router = Router()
 
 
-@get_location_router.message(F.location)
 @log_handler
+@get_location_router.message(F.location)
 async def get_location(message: types.Message, state: FSMContext):
     """
     Принимает геопозицию от пользователя

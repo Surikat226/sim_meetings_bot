@@ -9,8 +9,8 @@ from ...utils.logging import log_handler
 back_to_main_from_sub_router = Router()
 
 
-@back_to_main_from_sub_router.message(F.text == FilterTexts.back)
 @log_handler
+@back_to_main_from_sub_router.message(F.text == FilterTexts.back)
 async def back_to_main_from_sub(message: types.Message, state: FSMContext):
     """
     Хендлер для возврата в главное меню из сабменю

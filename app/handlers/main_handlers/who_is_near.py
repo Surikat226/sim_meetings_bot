@@ -8,8 +8,8 @@ from app.utils.logging import log_handler
 who_is_near_router = Router()
 
 
-@who_is_near_router.message(F.text == FilterTexts.whos_near)
 @log_handler
+@who_is_near_router.message(F.text == FilterTexts.whos_near)
 async def who_is_near(message: types.Message, state: FSMContext):
     """
     Кнопка "📍 Кто рядом". Отображает пользователей поблизости, которые включили режим "Я катаюсь"
