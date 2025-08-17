@@ -5,9 +5,9 @@ from app.handlers.return_handlers.back_to_main_from_sub import back_to_main_from
 from loguru import logger
 
 
-# TODO Подключить пакетный менеджер (poetry/uv), если целесообразно
 # TODO Реализоать загрузку фото себя и своего транспорта
 # TODO Реализоать хранение пользователей
+# TODO Реализовать раздел анкет
 # TODO Доработать геолокацию
 # TODO Подключить линтер
 # TODO Реализовать обратную связь пользователей со мной (вопросы/пожелания/предложения)

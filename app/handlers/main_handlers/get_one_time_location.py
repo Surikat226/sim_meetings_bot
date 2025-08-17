@@ -10,6 +10,7 @@ get_one_time_location_router = Router()
 
 @log_handler
 @get_one_time_location_router.message(F.location)
+# TODO Предположительно будет использоваться в разделе анкет для указания города юзера
 async def get_one_time_location(message: types.Message, state: FSMContext):
     """
     Принимает единовременную геопозицию от пользователя
