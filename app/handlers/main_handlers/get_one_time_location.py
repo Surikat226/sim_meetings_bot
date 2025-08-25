@@ -8,13 +8,14 @@ from app.utils.logging import log_handler
 get_one_time_location_router = Router()
 
 
-@log_handler
 @get_one_time_location_router.message(F.location)
+@log_handler
 # TODO Предположительно будет использоваться в разделе анкет для указания города юзера
 async def get_one_time_location(message: types.Message, state: FSMContext):
     """
     Принимает единовременную геопозицию от пользователя
     """
+
     lat = message.location.latitude
     lon = message.location.longitude
     await message.answer(

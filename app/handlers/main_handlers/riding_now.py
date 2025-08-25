@@ -9,12 +9,13 @@ from app.utils.logging import log_handler
 riding_now_router = Router()
 
 
-@log_handler
 @riding_now_router.message(F.text == FilterTexts.im_riding)
+@log_handler
 async def riding_now(message: types.Message, state: FSMContext):
     """
     Кнопка "🚴 Я катаюсь". Должна переводить пользователя в режим показа своей текущей геолокации другим пользователям
     """
+
     await message.answer(
         "Чтобы поделиться live-локацией:\n"
         "1. Нажми 📎 (скрепка) → «Геопозиция»\n"

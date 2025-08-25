@@ -9,12 +9,13 @@ from ...utils.logging import log_handler
 back_to_main_from_sub_router = Router()
 
 
-@log_handler
 @back_to_main_from_sub_router.message(F.text == FilterTexts.back)
+@log_handler
 async def back_to_main_from_sub(message: types.Message, state: FSMContext):
     """
     Хендлер для возврата в главное меню из сабменю
     """
+
     # FIXME Если возможно, избавиться от текста и просто возвращать юзера обратно
     await message.answer("Вернулись в главное меню!", reply_markup=main_menu_kb)
     await state.set_state(MainStates.main_menu)

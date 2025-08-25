@@ -9,8 +9,8 @@ from app.utils.logging import log_handler
 start_router = Router()
 
 
-@log_handler
 @start_router.message(CommandStart())
+@log_handler
 async def cmd_start(message: types.Message, state: FSMContext):
     """
     /start — Приветствует пользователя и показывает стартовое (главное) меню
